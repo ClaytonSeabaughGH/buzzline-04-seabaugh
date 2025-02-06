@@ -1,5 +1,5 @@
 """
-project_producer_case.py
+project_producer_seabaugh.py
 
 Stream JSON data to a file and - if available - a Kafka topic.
 

@@ -1,5 +1,5 @@
 """
-json_consumer_case.py
+json_consumer_seabaugh.py
 
 Consume json messages from a Kafka topic and visualize author counts in real-time.
 
