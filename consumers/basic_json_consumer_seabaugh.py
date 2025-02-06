@@ -1,5 +1,5 @@
 """
-basic_json_consumer_case.py
+basic_json_consumer_seabaugh.py
 
 Read a JSON-formatted file as it is being written. 
 
@@ -74,7 +74,7 @@ def update_chart():
     # Use the built-in axes methods to set the labels and title
     ax.set_xlabel("Authors")
     ax.set_ylabel("Message Counts")
-    ax.set_title("Basic Real-Time Author Message Counts")
+    ax.set_title("Clayton's Basic Real-Time Author Message Counts")
 
     # Use the set_xticklabels() method to rotate the x-axis labels
     # Pass in the x list, specify the rotation angle is 45 degrees,
