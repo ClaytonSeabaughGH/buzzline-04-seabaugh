@@ -3,20 +3,7 @@
 # Organize if messages say about movie, story, meme, app, trick 
 # Detect count of Kafka or Python mentioned
 
-"""
-json_consumer_seabaugh.py
 
-Consume json messages from a Kafka topic and visualize author counts in real-time.
-
-JSON is a set of key:value pairs. 
-
-Example serialized Kafka message
-"{\"message\": \"I love Python!\", \"author\": \"Eve\"}"
-
-Example JSON message (after deserialization) to be analyzed
-{"message": "I love Python!", "author": "Eve"}
-
-"""
 
 #####################################
 # Import Modules
@@ -25,7 +12,10 @@ Example JSON message (after deserialization) to be analyzed
 # Import packages from Python Standard Library
 import os
 import json  # handle JSON parsing
-from collections import defaultdict  # data structure for counting author occurrences
+from collections import defaultdict, Counter, deque  # data structure for counting author occurrences
+import time
+import datetime
+import re
 
 # Import external packages
 from dotenv import load_dotenv
@@ -35,6 +25,9 @@ from dotenv import load_dotenv
 # Use the common alias 'plt' for Matplotlib.pyplot
 # Know pyplot well
 import matplotlib.pyplot as plt
+
+# Import ntlk for tracking sentiment
+from nltk.sentiment import SentimentIntensityAnalyzer
 
 # Import functions from local modules
 from utils.utils_consumer import create_kafka_consumer
@@ -87,10 +80,114 @@ fig, ax = plt.subplots()
 plt.ion()
 
 #####################################
+# Sentiment Chart
+#####################################
+
+# Initialize Sentiment Analyzer
+sia = SentimentIntensityAnalyzer()
+
+# Data structure to store sentiment counts
+sentiment_counts = Counter({"Positive": 0, "Neutral": 0, "Negative": 0})
+
+# Initialize Matplotlib figure
+fig_sentiment, ax_sentiment = plt.subplots()
+plt.ion()  # Turn on interactive mode for real-time updates
+
+def analyze_sentiment(text: str) -> str:
+    """Determine sentiment category of a message."""
+    score = sia.polarity_scores(text)["compound"]
+    if score >= 0.05:
+        return "Positive"
+    elif score <= -0.05:
+        return "Negative"
+    else:
+        return "Neutral"
+
+def update_sentiment_chart():
+    """Update sentiment distribution pie chart."""
+    ax_sentiment.clear()
+    labels, sizes = zip(*sentiment_counts.items())
+    ax_sentiment.pie(sizes, labels=labels, autopct="%1.1f%%", colors=["green", "gray", "red"])
+    ax_sentiment.set_title("Real-Time Sentiment Analysis")
+    plt.draw()
+    plt.pause(0.01)
+
+def process_sentiment(message_text: str):
+    """Process message text for sentiment analysis."""
+    sentiment = analyze_sentiment(message_text)
+    sentiment_counts[sentiment] += 1
+    update_sentiment_chart()
+
+#####################################
+# Time Series Line Chart
+#####################################
+
+# Data structure for message timestamps
+message_timestamps = deque(maxlen=100)  # Stores last 100 timestamps
+
+# Initialize Matplotlib figure
+fig_volume, ax_volume = plt.subplots()
+
+def update_message_volume():
+    """Update time-series chart showing message volume per minute."""
+    ax_volume.clear()
+    
+    # Convert timestamps to minute-based bins
+    times = [datetime.datetime.fromtimestamp(ts).strftime('%H:%M') for ts in message_timestamps]
+    time_counts = Counter(times)
+    
+    # Sort times for plotting
+    sorted_times = sorted(time_counts.keys())
+    sorted_counts = [time_counts[t] for t in sorted_times]
+
+    ax_volume.plot(sorted_times, sorted_counts, marker="o", linestyle="-", color="blue")
+    ax_volume.set_xlabel("Time (HH:MM)")
+    ax_volume.set_ylabel("Messages per Minute")
+    ax_volume.set_title("Real-Time Message Volume Over Time")
+    plt.xticks(rotation=45)
+    plt.tight_layout()
+    plt.draw()
+    plt.pause(0.01)
+
+def process_message_volume():
+    """Log message timestamp and update chart."""
+    message_timestamps.append(time.time())
+    update_message_volume()
+
+
+#####################################
+# Time Series Line Chart
+#####################################
+
+# Keywords to track
+keywords = ["Kafka", "Python"]
+keyword_counts = Counter({kw: 0 for kw in keywords})
+
+# Initialize Matplotlib figure
+fig_keywords, ax_keywords = plt.subplots()
+
+def update_keyword_chart():
+    """Update keyword frequency bar chart."""
+    ax_keywords.clear()
+    words, counts = zip(*keyword_counts.items())
+    ax_keywords.bar(words, counts, color="orange")
+    ax_keywords.set_xlabel("Keywords")
+    ax_keywords.set_ylabel("Occurrences")
+    ax_keywords.set_title("Keyword Frequency in Messages")
+    plt.draw()
+    plt.pause(0.01)
+
+def process_keywords(message_text: str):
+    """Track occurrences of keywords in message text."""
+    for keyword in keywords:
+        if re.search(rf"\b{keyword}\b", message_text, re.IGNORECASE):
+            keyword_counts[keyword] += 1
+    update_keyword_chart()
+
+#####################################
 # Define an update chart function for live plotting
 # This will get called every time a new message is processed
 #####################################
-
 
 def update_chart():
     """Update the live chart with the latest author counts."""
@@ -147,6 +244,19 @@ def process_message(message: str) -> None:
 
         # Ensure the processed JSON is logged for debugging
         logger.info(f"Processed JSON message: {message_dict}")
+
+        # Process 
+        message_text = message_dict.get("text", "")
+
+        # Call processing functions
+        process_sentiment(message_text)
+        process_message_volume()
+        process_keywords(message_text)
+
+    except json.JSONDecodeError:
+        logger.error(f"Invalid JSON message: {message}")
+    except Exception as e:
+        logger.error(f"Error processing message: {e}")
 
         # Ensure it's a dictionary before accessing fields
         if isinstance(message_dict, dict):
