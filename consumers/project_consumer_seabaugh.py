@@ -1,7 +1,4 @@
-#Pseudocode
-#-Insight to visualize. Original is Count messages by a particular author. What is another one?
-# Organize if messages say about movie, story, meme, app, trick 
-# Detect count of Kafka or Python mentioned
+# project_consumer_seabaugh.py
 
 
 
@@ -27,7 +24,10 @@ from dotenv import load_dotenv
 import matplotlib.pyplot as plt
 
 # Import ntlk for tracking sentiment
+import nltk
 from nltk.sentiment import SentimentIntensityAnalyzer
+nltk.download('vader_lexicon')
+
 
 # Import functions from local modules
 from utils.utils_consumer import create_kafka_consumer
@@ -160,7 +160,7 @@ def process_message_volume():
 #####################################
 
 # Keywords to track
-keywords = ["Kafka", "Python"]
+keywords = ["Kafka", "Python", "JSON"]
 keyword_counts = Counter({kw: 0 for kw in keywords})
 
 # Initialize Matplotlib figure
@@ -228,58 +228,31 @@ def update_chart():
 # #####################################
 
 
-def process_message(message: str) -> None:
+def process_message(message: dict) -> None:
     """
-    Process a single JSON message from Kafka and update the chart.
+    Process a single message dictionary and update the charts.
 
     Args:
-        message (str): The JSON message as a string.
+        message (dict): The message as a dictionary.
     """
     try:
         # Log the raw message for debugging
         logger.debug(f"Raw message: {message}")
 
-        # Parse the JSON string into a Python dictionary
-        message_dict: dict = json.loads(message)
+        # Extract fields from the message dictionary
+        author = message.get("author", "unknown")
+        message_text = message.get("message", "")
 
-        # Ensure the processed JSON is logged for debugging
-        logger.info(f"Processed JSON message: {message_dict}")
+        # Update author counts
+        author_counts[author] += 1
+        logger.info(f"Updated author counts: {dict(author_counts)}")
 
-        # Process 
-        message_text = message_dict.get("text", "")
-
-        # Call processing functions
+        # Update charts
+        update_chart()
         process_sentiment(message_text)
         process_message_volume()
         process_keywords(message_text)
 
-    except json.JSONDecodeError:
-        logger.error(f"Invalid JSON message: {message}")
-    except Exception as e:
-        logger.error(f"Error processing message: {e}")
-
-        # Ensure it's a dictionary before accessing fields
-        if isinstance(message_dict, dict):
-            # Extract the 'author' field from the Python dictionary
-            author = message_dict.get("author", "unknown")
-            logger.info(f"Message received from author: {author}")
-
-            # Increment the count for the author
-            author_counts[author] += 1
-
-            # Log the updated counts
-            logger.info(f"Updated author counts: {dict(author_counts)}")
-
-            # Update the chart
-            update_chart()
-
-            # Log the updated chart
-            logger.info(f"Chart updated successfully for message: {message}")
-        else:
-            logger.error(f"Expected a dictionary but got: {type(message_dict)}")
-
-    except json.JSONDecodeError:
-        logger.error(f"Invalid JSON message: {message}")
     except Exception as e:
         logger.error(f"Error processing message: {e}")
 
