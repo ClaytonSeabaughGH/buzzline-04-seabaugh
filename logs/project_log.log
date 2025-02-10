@@ -523,3 +523,224 @@
 2025-02-10 00:31:40.910 | WARNING  | __main__:main:320 - Consumer interrupted by user.
 2025-02-10 00:31:40.914 | INFO     | __main__:main:325 - Kafka consumer for topic 'buzzline_json' closed.
 2025-02-10 00:31:40.914 | INFO     | __main__:main:327 - END consumer for topic 'buzzline_json' and group 'buzz_group'.
+2025-02-10 00:44:45.642 | INFO     | utils.utils_logger:<module>:38 - Logging to file: logs\project_log.log
+2025-02-10 00:44:45.644 | INFO     | __main__:<module>:68 - Project root: C:\Users\clayt\Documents\buzzline-04-seabaugh
+2025-02-10 00:44:45.644 | INFO     | __main__:<module>:72 - Data folder: C:\Users\clayt\Documents\buzzline-04-seabaugh\data
+2025-02-10 00:44:45.644 | INFO     | __main__:<module>:76 - Data file: C:\Users\clayt\Documents\buzzline-04-seabaugh\data\buzz.json
+2025-02-10 00:44:45.644 | INFO     | __main__:main:136 - START producer.
+2025-02-10 00:44:45.644 | INFO     | utils.utils_producer:get_zookeeper_address:57 - Zookeeper address: localhost:2181
+2025-02-10 00:44:45.648 | INFO     | utils.utils_producer:check_zookeeper_service_is_ready:79 - Zookeeper is ready at localhost:2181.
+2025-02-10 00:44:45.648 | INFO     | utils.utils_producer:get_kafka_broker_address:50 - Kafka broker address: localhost:9092
+2025-02-10 00:44:45.970 | INFO     | utils.utils_producer:check_kafka_service_is_ready:98 - Kafka is ready. Brokers: {'throttle_time_ms': 0, 'brokers': [{'node_id': 1001, 'host': 'localhost', 'port': 9092, 'rack': None}], 'cluster_id': 'Us7fRuUnTjGVEqyepj8O2Q', 'controller_id': 1001}
+2025-02-10 00:44:45.970 | INFO     | __main__:get_kafka_topic:50 - Kafka topic: buzzline_json
+2025-02-10 00:44:45.970 | INFO     | __main__:get_message_interval:57 - Message interval: 3 seconds
+2025-02-10 00:44:45.971 | INFO     | utils.utils_producer:get_kafka_broker_address:50 - Kafka broker address: localhost:9092
+2025-02-10 00:44:45.971 | INFO     | utils.utils_producer:create_kafka_producer:146 - Connecting to Kafka broker at localhost:9092...
+2025-02-10 00:44:46.074 | INFO     | utils.utils_producer:create_kafka_producer:151 - Kafka producer successfully created.
+2025-02-10 00:44:46.074 | INFO     | utils.utils_producer:get_kafka_broker_address:50 - Kafka broker address: localhost:9092
+2025-02-10 00:44:46.389 | INFO     | utils.utils_producer:create_kafka_topic:172 - Topic 'buzzline_json' already exists. Clearing it out...
+2025-02-10 00:44:46.390 | INFO     | utils.utils_producer:get_kafka_broker_address:50 - Kafka broker address: localhost:9092
+2025-02-10 00:44:46.705 | ERROR    | utils.utils_producer:clear_kafka_topic:235 - Error managing retention for topic 'buzzline_json': list indices must be integers or slices, not ConfigResource
+2025-02-10 00:44:46.705 | INFO     | __main__:main:159 - Kafka topic 'buzzline_json' is ready.
+2025-02-10 00:44:46.705 | INFO     | __main__:main:165 - Starting message production to topic 'buzzline_json'...
+2025-02-10 00:44:46.706 | INFO     | __main__:generate_messages:95 - Opening data file in read mode: C:\Users\clayt\Documents\buzzline-04-seabaugh\data\buzz.json
+2025-02-10 00:44:46.706 | INFO     | __main__:generate_messages:97 - Reading data from file: C:\Users\clayt\Documents\buzzline-04-seabaugh\data\buzz.json
+2025-02-10 00:44:46.707 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'message': 'Data engineering is my passion.', 'author': 'Eve'}
+2025-02-10 00:44:49.708 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'message': 'Distributed systems are fascinating.', 'author': 'Alice'}
+2025-02-10 00:44:52.711 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'message': 'Have a great day!', 'author': 'Charlie'}
+2025-02-10 00:44:55.713 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'message': 'Data engineering is my passion.', 'author': 'Alice'}
+2025-02-10 00:44:58.714 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'message': 'Distributed systems are fascinating.', 'author': 'Diana'}
+2025-02-10 00:45:01.681 | WARNING  | __main__:main:173 - Producer interrupted by user.
+2025-02-10 00:45:01.681 | INFO     | __main__:main:178 - Kafka producer closed.
+2025-02-10 00:45:01.681 | INFO     | __main__:main:180 - END producer.
+2025-02-10 00:45:16.787 | INFO     | utils.utils_logger:<module>:38 - Logging to file: logs\project_log.log
+2025-02-10 00:45:16.789 | INFO     | __main__:<module>:68 - Project root: C:\Users\clayt\Documents\buzzline-04-seabaugh
+2025-02-10 00:45:16.789 | INFO     | __main__:<module>:72 - Data folder: C:\Users\clayt\Documents\buzzline-04-seabaugh\data
+2025-02-10 00:45:16.789 | INFO     | __main__:<module>:76 - Data file: C:\Users\clayt\Documents\buzzline-04-seabaugh\data\buzz.json
+2025-02-10 00:45:16.789 | INFO     | __main__:main:136 - START producer.
+2025-02-10 00:45:16.789 | INFO     | utils.utils_producer:get_zookeeper_address:57 - Zookeeper address: localhost:2181
+2025-02-10 00:45:16.792 | INFO     | utils.utils_producer:check_zookeeper_service_is_ready:79 - Zookeeper is ready at localhost:2181.
+2025-02-10 00:45:16.794 | INFO     | utils.utils_producer:get_kafka_broker_address:50 - Kafka broker address: localhost:9092
+2025-02-10 00:45:17.123 | INFO     | utils.utils_producer:check_kafka_service_is_ready:98 - Kafka is ready. Brokers: {'throttle_time_ms': 0, 'brokers': [{'node_id': 1001, 'host': 'localhost', 'port': 9092, 'rack': None}], 'cluster_id': 'Us7fRuUnTjGVEqyepj8O2Q', 'controller_id': 1001}
+2025-02-10 00:45:17.125 | INFO     | __main__:get_kafka_topic:50 - Kafka topic: buzzline_json
+2025-02-10 00:45:17.126 | INFO     | __main__:get_message_interval:57 - Message interval: 3 seconds
+2025-02-10 00:45:17.126 | INFO     | utils.utils_producer:get_kafka_broker_address:50 - Kafka broker address: localhost:9092
+2025-02-10 00:45:17.127 | INFO     | utils.utils_producer:create_kafka_producer:146 - Connecting to Kafka broker at localhost:9092...
+2025-02-10 00:45:17.232 | INFO     | utils.utils_producer:create_kafka_producer:151 - Kafka producer successfully created.
+2025-02-10 00:45:17.232 | INFO     | utils.utils_producer:get_kafka_broker_address:50 - Kafka broker address: localhost:9092
+2025-02-10 00:45:17.543 | INFO     | utils.utils_producer:create_kafka_topic:172 - Topic 'buzzline_json' already exists. Clearing it out...
+2025-02-10 00:45:17.544 | INFO     | utils.utils_producer:get_kafka_broker_address:50 - Kafka broker address: localhost:9092
+2025-02-10 00:45:17.856 | ERROR    | utils.utils_producer:clear_kafka_topic:235 - Error managing retention for topic 'buzzline_json': list indices must be integers or slices, not ConfigResource
+2025-02-10 00:45:17.856 | INFO     | __main__:main:159 - Kafka topic 'buzzline_json' is ready.
+2025-02-10 00:45:17.856 | INFO     | __main__:main:165 - Starting message production to topic 'buzzline_json'...
+2025-02-10 00:45:17.857 | INFO     | __main__:generate_messages:95 - Opening data file in read mode: C:\Users\clayt\Documents\buzzline-04-seabaugh\data\buzz.json
+2025-02-10 00:45:17.857 | INFO     | __main__:generate_messages:97 - Reading data from file: C:\Users\clayt\Documents\buzzline-04-seabaugh\data\buzz.json
+2025-02-10 00:45:17.858 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'message': 'Data engineering is my passion.', 'author': 'Eve'}
+2025-02-10 00:45:20.859 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'message': 'Distributed systems are fascinating.', 'author': 'Alice'}
+2025-02-10 00:45:23.863 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'message': 'Have a great day!', 'author': 'Charlie'}
+2025-02-10 00:45:26.864 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'message': 'Data engineering is my passion.', 'author': 'Alice'}
+2025-02-10 00:45:26.876 | INFO     | utils.utils_logger:<module>:38 - Logging to file: logs\project_log.log
+2025-02-10 00:45:27.131 | INFO     | __main__:main:262 - START consumer.
+2025-02-10 00:45:27.131 | INFO     | __main__:main:279 - END consumer.
+2025-02-10 00:45:29.865 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'message': 'Distributed systems are fascinating.', 'author': 'Diana'}
+2025-02-10 00:45:32.866 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'message': 'Buzz messages for everyone.', 'author': 'Alice'}
+2025-02-10 00:45:35.868 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'message': 'Hello, Kafka world!', 'author': 'Diana'}
+2025-02-10 00:45:38.869 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'message': 'This is a buzz message.', 'author': 'Eve'}
+2025-02-10 00:45:41.869 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'message': 'JSON makes life easier.', 'author': 'Eve'}
+2025-02-10 00:45:44.873 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'message': 'JSON makes life easier.', 'author': 'Alice'}
+2025-02-10 00:45:47.878 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'message': 'Data engineering is my passion.', 'author': 'Diana'}
+2025-02-10 00:45:50.879 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'message': 'JSON makes life easier.', 'author': 'Diana'}
+2025-02-10 00:45:53.880 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'message': 'Kafka is awesome.', 'author': 'Charlie'}
+2025-02-10 00:45:56.882 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'message': 'JSON makes life easier.', 'author': 'Bob'}
+2025-02-10 00:45:59.884 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'message': 'I love Python!', 'author': 'Bob'}
+2025-02-10 00:46:02.885 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'message': 'This is a buzz message.', 'author': 'Eve'}
+2025-02-10 00:46:03.063 | INFO     | utils.utils_logger:<module>:38 - Logging to file: logs\project_log.log
+2025-02-10 00:46:03.309 | INFO     | __main__:main:269 - START consumer.
+2025-02-10 00:46:03.310 | INFO     | __main__:main:286 - END consumer.
+2025-02-10 00:46:05.888 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'message': 'I love Python!', 'author': 'Eve'}
+2025-02-10 00:46:08.890 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'message': 'Buzz messages for everyone.', 'author': 'Alice'}
+2025-02-10 00:46:11.891 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'message': 'This is a buzz message.', 'author': 'Alice'}
+2025-02-10 00:46:14.893 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'message': 'Data engineering is my passion.', 'author': 'Diana'}
+2025-02-10 00:46:17.524 | WARNING  | __main__:main:173 - Producer interrupted by user.
+2025-02-10 00:46:17.526 | INFO     | __main__:main:178 - Kafka producer closed.
+2025-02-10 00:46:17.526 | INFO     | __main__:main:180 - END producer.
+2025-02-10 00:49:17.194 | INFO     | utils.utils_logger:<module>:38 - Logging to file: logs\project_log.log
+2025-02-10 00:49:17.195 | INFO     | __main__:<module>:68 - Project root: C:\Users\clayt\Documents\buzzline-04-seabaugh
+2025-02-10 00:49:17.195 | INFO     | __main__:<module>:72 - Data folder: C:\Users\clayt\Documents\buzzline-04-seabaugh\data
+2025-02-10 00:49:17.196 | INFO     | __main__:<module>:76 - Data file: C:\Users\clayt\Documents\buzzline-04-seabaugh\data\buzz.json
+2025-02-10 00:49:17.196 | INFO     | __main__:main:136 - START producer.
+2025-02-10 00:49:17.196 | INFO     | utils.utils_producer:get_zookeeper_address:57 - Zookeeper address: localhost:2181
+2025-02-10 00:49:17.199 | INFO     | utils.utils_producer:check_zookeeper_service_is_ready:79 - Zookeeper is ready at localhost:2181.
+2025-02-10 00:49:17.200 | INFO     | utils.utils_producer:get_kafka_broker_address:50 - Kafka broker address: localhost:9092
+2025-02-10 00:49:17.522 | INFO     | utils.utils_producer:check_kafka_service_is_ready:98 - Kafka is ready. Brokers: {'throttle_time_ms': 0, 'brokers': [{'node_id': 1001, 'host': 'localhost', 'port': 9092, 'rack': None}], 'cluster_id': 'Us7fRuUnTjGVEqyepj8O2Q', 'controller_id': 1001}
+2025-02-10 00:49:17.522 | INFO     | __main__:get_kafka_topic:50 - Kafka topic: buzzline_json
+2025-02-10 00:49:17.522 | INFO     | __main__:get_message_interval:57 - Message interval: 3 seconds
+2025-02-10 00:49:17.523 | INFO     | utils.utils_producer:get_kafka_broker_address:50 - Kafka broker address: localhost:9092
+2025-02-10 00:49:17.523 | INFO     | utils.utils_producer:create_kafka_producer:146 - Connecting to Kafka broker at localhost:9092...
+2025-02-10 00:49:17.627 | INFO     | utils.utils_producer:create_kafka_producer:151 - Kafka producer successfully created.
+2025-02-10 00:49:17.627 | INFO     | utils.utils_producer:get_kafka_broker_address:50 - Kafka broker address: localhost:9092
+2025-02-10 00:49:17.943 | INFO     | utils.utils_producer:create_kafka_topic:172 - Topic 'buzzline_json' already exists. Clearing it out...
+2025-02-10 00:49:17.944 | INFO     | utils.utils_producer:get_kafka_broker_address:50 - Kafka broker address: localhost:9092
+2025-02-10 00:49:18.272 | ERROR    | utils.utils_producer:clear_kafka_topic:235 - Error managing retention for topic 'buzzline_json': list indices must be integers or slices, not ConfigResource
+2025-02-10 00:49:18.273 | INFO     | __main__:main:159 - Kafka topic 'buzzline_json' is ready.
+2025-02-10 00:49:18.274 | INFO     | __main__:main:165 - Starting message production to topic 'buzzline_json'...
+2025-02-10 00:49:18.275 | INFO     | __main__:generate_messages:95 - Opening data file in read mode: C:\Users\clayt\Documents\buzzline-04-seabaugh\data\buzz.json
+2025-02-10 00:49:18.275 | INFO     | __main__:generate_messages:97 - Reading data from file: C:\Users\clayt\Documents\buzzline-04-seabaugh\data\buzz.json
+2025-02-10 00:49:18.277 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'message': 'Data engineering is my passion.', 'author': 'Eve'}
+2025-02-10 00:49:21.280 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'message': 'Distributed systems are fascinating.', 'author': 'Alice'}
+2025-02-10 00:49:24.283 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'message': 'Have a great day!', 'author': 'Charlie'}
+2025-02-10 00:49:27.288 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'message': 'Data engineering is my passion.', 'author': 'Alice'}
+2025-02-10 00:49:30.291 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'message': 'Distributed systems are fascinating.', 'author': 'Diana'}
+2025-02-10 00:49:31.740 | INFO     | utils.utils_logger:<module>:38 - Logging to file: logs\project_log.log
+2025-02-10 00:49:31.993 | INFO     | __main__:main:273 - START consumer.
+2025-02-10 00:49:31.993 | INFO     | __main__:get_kafka_topic:50 - Kafka topic: buzzline_json
+2025-02-10 00:49:31.994 | INFO     | __main__:get_kafka_consumer_group_id:57 - Kafka consumer group id: buzz_group
+2025-02-10 00:49:31.994 | INFO     | __main__:main:278 - Consumer: Topic 'buzzline_json' and group 'buzz_group'...
+2025-02-10 00:49:31.994 | INFO     | utils.utils_producer:get_kafka_broker_address:50 - Kafka broker address: localhost:9092
+2025-02-10 00:49:31.994 | INFO     | utils.utils_consumer:create_kafka_consumer:44 - Creating Kafka consumer. Topic='buzzline_json' and group ID='buzz_group'.
+2025-02-10 00:49:32.096 | INFO     | utils.utils_consumer:create_kafka_consumer:59 - Kafka consumer created successfully.
+2025-02-10 00:49:32.097 | INFO     | __main__:main:284 - Polling messages from topic 'buzzline_json'...
+2025-02-10 00:49:32.219 | ERROR    | __main__:process_message:257 - Error processing message: 'str' object has no attribute 'get'
+2025-02-10 00:49:32.219 | ERROR    | __main__:process_message:257 - Error processing message: 'str' object has no attribute 'get'
+2025-02-10 00:49:32.219 | ERROR    | __main__:process_message:257 - Error processing message: 'str' object has no attribute 'get'
+2025-02-10 00:49:32.220 | ERROR    | __main__:process_message:257 - Error processing message: 'str' object has no attribute 'get'
+2025-02-10 00:49:32.220 | ERROR    | __main__:process_message:257 - Error processing message: 'str' object has no attribute 'get'
+2025-02-10 00:49:32.220 | ERROR    | __main__:process_message:257 - Error processing message: 'str' object has no attribute 'get'
+2025-02-10 00:49:32.221 | ERROR    | __main__:process_message:257 - Error processing message: 'str' object has no attribute 'get'
+2025-02-10 00:49:32.221 | ERROR    | __main__:process_message:257 - Error processing message: 'str' object has no attribute 'get'
+2025-02-10 00:49:32.221 | ERROR    | __main__:process_message:257 - Error processing message: 'str' object has no attribute 'get'
+2025-02-10 00:49:32.222 | ERROR    | __main__:process_message:257 - Error processing message: 'str' object has no attribute 'get'
+2025-02-10 00:49:32.222 | ERROR    | __main__:process_message:257 - Error processing message: 'str' object has no attribute 'get'
+2025-02-10 00:49:32.222 | ERROR    | __main__:process_message:257 - Error processing message: 'str' object has no attribute 'get'
+2025-02-10 00:49:32.223 | ERROR    | __main__:process_message:257 - Error processing message: 'str' object has no attribute 'get'
+2025-02-10 00:49:32.223 | ERROR    | __main__:process_message:257 - Error processing message: 'str' object has no attribute 'get'
+2025-02-10 00:49:32.223 | ERROR    | __main__:process_message:257 - Error processing message: 'str' object has no attribute 'get'
+2025-02-10 00:49:32.225 | ERROR    | __main__:process_message:257 - Error processing message: 'str' object has no attribute 'get'
+2025-02-10 00:49:32.225 | ERROR    | __main__:process_message:257 - Error processing message: 'str' object has no attribute 'get'
+2025-02-10 00:49:32.226 | ERROR    | __main__:process_message:257 - Error processing message: 'str' object has no attribute 'get'
+2025-02-10 00:49:32.226 | ERROR    | __main__:process_message:257 - Error processing message: 'str' object has no attribute 'get'
+2025-02-10 00:49:32.226 | ERROR    | __main__:process_message:257 - Error processing message: 'str' object has no attribute 'get'
+2025-02-10 00:49:32.227 | ERROR    | __main__:process_message:257 - Error processing message: 'str' object has no attribute 'get'
+2025-02-10 00:49:32.227 | ERROR    | __main__:process_message:257 - Error processing message: 'str' object has no attribute 'get'
+2025-02-10 00:49:32.227 | ERROR    | __main__:process_message:257 - Error processing message: 'str' object has no attribute 'get'
+2025-02-10 00:49:32.228 | ERROR    | __main__:process_message:257 - Error processing message: 'str' object has no attribute 'get'
+2025-02-10 00:49:32.228 | ERROR    | __main__:process_message:257 - Error processing message: 'str' object has no attribute 'get'
+2025-02-10 00:49:32.228 | ERROR    | __main__:process_message:257 - Error processing message: 'str' object has no attribute 'get'
+2025-02-10 00:49:32.229 | ERROR    | __main__:process_message:257 - Error processing message: 'str' object has no attribute 'get'
+2025-02-10 00:49:32.229 | ERROR    | __main__:process_message:257 - Error processing message: 'str' object has no attribute 'get'
+2025-02-10 00:49:32.229 | ERROR    | __main__:process_message:257 - Error processing message: 'str' object has no attribute 'get'
+2025-02-10 00:49:32.230 | ERROR    | __main__:process_message:257 - Error processing message: 'str' object has no attribute 'get'
+2025-02-10 00:49:33.293 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'message': 'Buzz messages for everyone.', 'author': 'Alice'}
+2025-02-10 00:49:33.298 | ERROR    | __main__:process_message:257 - Error processing message: 'str' object has no attribute 'get'
+2025-02-10 00:49:36.295 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'message': 'Hello, Kafka world!', 'author': 'Diana'}
+2025-02-10 00:49:36.299 | ERROR    | __main__:process_message:257 - Error processing message: 'str' object has no attribute 'get'
+2025-02-10 00:49:39.299 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'message': 'This is a buzz message.', 'author': 'Eve'}
+2025-02-10 00:49:39.306 | ERROR    | __main__:process_message:257 - Error processing message: 'str' object has no attribute 'get'
+2025-02-10 00:49:42.302 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'message': 'JSON makes life easier.', 'author': 'Eve'}
+2025-02-10 00:49:42.308 | ERROR    | __main__:process_message:257 - Error processing message: 'str' object has no attribute 'get'
+2025-02-10 00:49:45.305 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'message': 'JSON makes life easier.', 'author': 'Alice'}
+2025-02-10 00:49:45.308 | ERROR    | __main__:process_message:257 - Error processing message: 'str' object has no attribute 'get'
+2025-02-10 00:49:48.308 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'message': 'Data engineering is my passion.', 'author': 'Diana'}
+2025-02-10 00:49:48.314 | ERROR    | __main__:process_message:257 - Error processing message: 'str' object has no attribute 'get'
+2025-02-10 00:49:51.312 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'message': 'JSON makes life easier.', 'author': 'Diana'}
+2025-02-10 00:49:51.315 | ERROR    | __main__:process_message:257 - Error processing message: 'str' object has no attribute 'get'
+2025-02-10 00:49:53.836 | WARNING  | __main__:main:293 - Consumer interrupted by user.
+2025-02-10 00:49:53.843 | INFO     | __main__:main:298 - Kafka consumer for topic 'buzzline_json' closed.
+2025-02-10 00:49:53.844 | INFO     | __main__:main:300 - END consumer for topic 'buzzline_json' and group 'buzz_group'.
+2025-02-10 00:49:54.314 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'message': 'Kafka is awesome.', 'author': 'Charlie'}
+2025-02-10 00:49:57.315 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'message': 'JSON makes life easier.', 'author': 'Bob'}
+2025-02-10 00:50:00.315 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'message': 'I love Python!', 'author': 'Bob'}
+2025-02-10 00:50:03.319 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'message': 'This is a buzz message.', 'author': 'Eve'}
+2025-02-10 00:50:05.267 | WARNING  | __main__:main:173 - Producer interrupted by user.
+2025-02-10 00:50:05.269 | INFO     | __main__:main:178 - Kafka producer closed.
+2025-02-10 00:50:05.269 | INFO     | __main__:main:180 - END producer.
+2025-02-10 00:55:59.936 | INFO     | utils.utils_logger:<module>:38 - Logging to file: logs\project_log.log
+2025-02-10 00:55:59.937 | INFO     | __main__:<module>:68 - Project root: C:\Users\clayt\Documents\buzzline-04-seabaugh
+2025-02-10 00:55:59.938 | INFO     | __main__:<module>:72 - Data folder: C:\Users\clayt\Documents\buzzline-04-seabaugh\data
+2025-02-10 00:55:59.938 | INFO     | __main__:<module>:76 - Data file: C:\Users\clayt\Documents\buzzline-04-seabaugh\data\buzz.json
+2025-02-10 00:55:59.938 | INFO     | __main__:main:136 - START producer.
+2025-02-10 00:55:59.938 | INFO     | utils.utils_producer:get_zookeeper_address:57 - Zookeeper address: localhost:2181
+2025-02-10 00:55:59.941 | INFO     | utils.utils_producer:check_zookeeper_service_is_ready:79 - Zookeeper is ready at localhost:2181.
+2025-02-10 00:55:59.942 | INFO     | utils.utils_producer:get_kafka_broker_address:50 - Kafka broker address: localhost:9092
+2025-02-10 00:56:00.263 | INFO     | utils.utils_producer:check_kafka_service_is_ready:98 - Kafka is ready. Brokers: {'throttle_time_ms': 0, 'brokers': [{'node_id': 1001, 'host': 'localhost', 'port': 9092, 'rack': None}], 'cluster_id': 't_P7NisoSTiTuHUUpqWpMg', 'controller_id': 1001}
+2025-02-10 00:56:00.264 | INFO     | __main__:get_kafka_topic:50 - Kafka topic: buzzline_json
+2025-02-10 00:56:00.265 | INFO     | __main__:get_message_interval:57 - Message interval: 3 seconds
+2025-02-10 00:56:00.266 | INFO     | utils.utils_producer:get_kafka_broker_address:50 - Kafka broker address: localhost:9092
+2025-02-10 00:56:00.267 | INFO     | utils.utils_producer:create_kafka_producer:146 - Connecting to Kafka broker at localhost:9092...
+2025-02-10 00:56:00.372 | INFO     | utils.utils_producer:create_kafka_producer:151 - Kafka producer successfully created.
+2025-02-10 00:56:00.373 | INFO     | utils.utils_producer:get_kafka_broker_address:50 - Kafka broker address: localhost:9092
+2025-02-10 00:56:00.719 | INFO     | utils.utils_producer:create_kafka_topic:176 - Creating 'buzzline_json'.
+2025-02-10 00:56:01.106 | INFO     | utils.utils_producer:create_kafka_topic:181 - Topic 'buzzline_json' created successfully.
+2025-02-10 00:56:01.107 | INFO     | __main__:main:159 - Kafka topic 'buzzline_json' is ready.
+2025-02-10 00:56:01.107 | INFO     | __main__:main:165 - Starting message production to topic 'buzzline_json'...
+2025-02-10 00:56:01.107 | INFO     | __main__:generate_messages:95 - Opening data file in read mode: C:\Users\clayt\Documents\buzzline-04-seabaugh\data\buzz.json
+2025-02-10 00:56:01.108 | INFO     | __main__:generate_messages:97 - Reading data from file: C:\Users\clayt\Documents\buzzline-04-seabaugh\data\buzz.json
+2025-02-10 00:56:01.112 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'message': 'Data engineering is my passion.', 'author': 'Eve'}
+2025-02-10 00:56:04.114 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'message': 'Distributed systems are fascinating.', 'author': 'Alice'}
+2025-02-10 00:56:07.118 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'message': 'Have a great day!', 'author': 'Charlie'}
+2025-02-10 00:56:10.119 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'message': 'Data engineering is my passion.', 'author': 'Alice'}
+2025-02-10 00:56:11.005 | INFO     | utils.utils_logger:<module>:38 - Logging to file: logs\project_log.log
+2025-02-10 00:56:11.259 | INFO     | __main__:main:273 - START consumer.
+2025-02-10 00:56:11.259 | INFO     | __main__:get_kafka_topic:50 - Kafka topic: buzzline_json
+2025-02-10 00:56:11.259 | INFO     | __main__:get_kafka_consumer_group_id:57 - Kafka consumer group id: buzz_group
+2025-02-10 00:56:11.259 | INFO     | __main__:main:278 - Consumer: Topic 'buzzline_json' and group 'buzz_group'...
+2025-02-10 00:56:11.260 | INFO     | utils.utils_producer:get_kafka_broker_address:50 - Kafka broker address: localhost:9092
+2025-02-10 00:56:11.260 | INFO     | utils.utils_consumer:create_kafka_consumer:44 - Creating Kafka consumer. Topic='buzzline_json' and group ID='buzz_group'.
+2025-02-10 00:56:11.364 | INFO     | utils.utils_consumer:create_kafka_consumer:59 - Kafka consumer created successfully.
+2025-02-10 00:56:11.364 | INFO     | __main__:main:284 - Polling messages from topic 'buzzline_json'...
+2025-02-10 00:56:12.661 | ERROR    | __main__:process_message:257 - Error processing message: 'str' object has no attribute 'get'
+2025-02-10 00:56:12.661 | ERROR    | __main__:process_message:257 - Error processing message: 'str' object has no attribute 'get'
+2025-02-10 00:56:12.662 | ERROR    | __main__:process_message:257 - Error processing message: 'str' object has no attribute 'get'
+2025-02-10 00:56:12.662 | ERROR    | __main__:process_message:257 - Error processing message: 'str' object has no attribute 'get'
+2025-02-10 00:56:13.123 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'message': 'Distributed systems are fascinating.', 'author': 'Diana'}
+2025-02-10 00:56:13.131 | ERROR    | __main__:process_message:257 - Error processing message: 'str' object has no attribute 'get'
+2025-02-10 00:56:16.126 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'message': 'Buzz messages for everyone.', 'author': 'Alice'}
+2025-02-10 00:56:16.129 | ERROR    | __main__:process_message:257 - Error processing message: 'str' object has no attribute 'get'
+2025-02-10 00:56:19.128 | INFO     | __main__:main:170 - Sent message to topic 'buzzline_json': {'message': 'Hello, Kafka world!', 'author': 'Diana'}
+2025-02-10 00:56:19.132 | ERROR    | __main__:process_message:257 - Error processing message: 'str' object has no attribute 'get'
+2025-02-10 00:56:20.129 | WARNING  | __main__:main:293 - Consumer interrupted by user.
+2025-02-10 00:56:20.135 | INFO     | __main__:main:298 - Kafka consumer for topic 'buzzline_json' closed.
+2025-02-10 00:56:20.135 | INFO     | __main__:main:300 - END consumer for topic 'buzzline_json' and group 'buzz_group'.
+2025-02-10 00:56:21.610 | WARNING  | __main__:main:173 - Producer interrupted by user.
+2025-02-10 00:56:21.612 | INFO     | __main__:main:178 - Kafka producer closed.
+2025-02-10 00:56:21.612 | INFO     | __main__:main:180 - END producer.

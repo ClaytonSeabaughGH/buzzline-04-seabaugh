@@ -265,31 +265,40 @@ def process_message(message: dict) -> None:
 def main() -> None:
     """
     Main entry point for the consumer.
+
+    - Reads the Kafka topic name and consumer group ID from environment variables.
+    - Creates a Kafka consumer using the `create_kafka_consumer` utility.
+    - Polls messages and updates a live chart.
     """
     logger.info("START consumer.")
 
-    # Simulate Kafka messages using the provided data
-    messages = [
-        # (Insert the provided list of messages here)
-    ]
+    # fetch .env content
+    topic = get_kafka_topic()
+    group_id = get_kafka_consumer_group_id()
+    logger.info(f"Consumer: Topic '{topic}' and group '{group_id}'...")
 
-    # Process each message with a delay to simulate real-time updates
+    # Create the Kafka consumer using the helpful utility function.
+    consumer = create_kafka_consumer(topic, group_id)
+
+    # Poll and process messages
+    logger.info(f"Polling messages from topic '{topic}'...")
     try:
-        for message in messages:
-            process_message(message)
-            time.sleep(1)  # Simulate delay between messages
+        for message in consumer:
+            # message is a complex object with metadata and value
+            # Use the value attribute to extract the message as a string
+            message_str = message.value
+            logger.debug(f"Received message at offset {message.offset}: {message_str}")
+            process_message(message_str)
     except KeyboardInterrupt:
         logger.warning("Consumer interrupted by user.")
     except Exception as e:
         logger.error(f"Error while consuming messages: {e}")
     finally:
-        logger.info("END consumer.")
+        consumer.close()
+        logger.info(f"Kafka consumer for topic '{topic}' closed.")
 
-    # Turn off interactive mode after completion
-    plt.ioff()
+    logger.info(f"END consumer for topic '{topic}' and group '{group_id}'.")
 
-    # Display the final chart
-    plt.show()
 
 #####################################
 # Conditional Execution
